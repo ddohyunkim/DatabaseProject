@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>H.P</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../static/HP_icon.png" />
+    <style type="text/css">
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        ul.hpList li, ol.hpList li {
+            padding: 5px 0px 5px 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #efefef;
+            font-size: 12px;
+        }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>H.P</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../static/HP_icon.png" />
+    <style type="text/css">
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        ul.hpList li, ol.hpList li {
+            padding: 5px 0px 5px 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #efefef;
+            font-size: 12px;
+        }
+        ul.pmList li, ol.pmList li {
+            padding: 5px 0px 5px 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #efefef;
+            font-size: 12px;
+        }
+    </style>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../static/main.css" rel="stylesheet" />
+    <script src="../startbootstrap-landing-page-gh-pages/"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            //  처음으로 돌아가기 (버튼)
+            $("button[name='init']").click(function(){
+                location.href = '/';
+            });
+        });
+    </script>  
+</head>
+<body>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <button class="btn btn-danger btn-lg" id="init" name="init" type="button">처음으로</button>
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <!-- Page heading-->
+                        <h1 class="mb-5"><img src="../static/HP_icon_back.png" width="70" height="70"><b> Hospital</b></h1>
+                        <!-- to get an API token!-->
+                        <div style="overflow-y: scroll; height:500px;">
+                            <form id="hpTarget" action="/target" method="post">
+                                <ul class="hpList">
+                                    {% for idx, hp_item in enumerate(hp) %}
+                                        <button type="submit" id="dataVal" name="dataVal" value="{{ hp_item[0] }}_hospital" style="border: none; border: 0; background-color: transparent; width:100%; color:white">
+                                        <li> {{ hp_item[2] + ", " + hp_item[3] + ", " +  hp_item[4] }} </li>
+                                        </button>
+                                    {% endfor %}
+                                </ul>
+                                <input type="hidden" id="selectedHP" name="selectedHP" value="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <!-- Page heading-->
+                        <h1 class="mb-5"><img src="../static/HP_icon_back.png" width="70" height="70"><b> Pharmacy</b></h1>
+                        <!-- to get an API token!-->
+                        <div style="overflow-y: scroll; height:500px;">
+                            <form id="pmTarget" action="/target" method="post">
+                                <ul class="pmList">
+                                    {% for idx, pm_item in enumerate(pm) %}
+                                        <button type="submit" id="dataVal" name="dataVal" value="{{ pm_item[0] }}_pharmacy" style="border: none; border: 0; background-color: transparent; width:100%; color:white">
+                                        <li> {{ pm_item[1] + ", " + pm_item[2] + ", " + pm_item[3] }} </li>
+                                        </button>
+                                    {% endfor %}
+                                </ul>
+                                <input type="hidden" id="selectedPM" name="selectedPM" value="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- Kakao Maps API JS-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=key를 입력하시오."></script>
+    <!-- Custom JavaScript for map rendering-->
+    <script src="js/map.js"></script>
+
+    <script>
+        function searchSubmit() {
+            var searchTerm = document.getElementById('hosptalpharmacy').value;
+            window.location.href = 'submit.html?searchTerm=' + encodeURIComponent(searchTerm);
+        }
+    </script>
+</body>
+</html>
+        ul.pmList li, ol.pmList li {
+            padding: 5px 0px 5px 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #efefef;
+            font-size: 12px;
+        }
+    </style>
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../static/main.css" rel="stylesheet" />
+    <script src="../startbootstrap-landing-page-gh-pages/"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            //  처음으로 돌아가기 (버튼)
+            $("button[name='init']").click(function(){
+                location.href = '/';
+            });
+        });
+    </script>  
+</head>
+<body>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <button class="btn btn-danger btn-lg" id="init" name="init" type="button">처음으로</button>
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <!-- Page heading-->
+                        <h1 class="mb-5"><img src="../static/HP_icon_back.png" width="70" height="70"><b> Hospital</b></h1>
+                        <!-- to get an API token!-->
+                        <div style="overflow-y: scroll; height:500px;">
+                            <form id="hpTarget" action="/target" method="post">
+                                <ul class="hpList">
+                                    {% for idx, hp_item in enumerate(hp) %}
+                                        <button type="submit" id="dataVal" name="dataVal" value="{{ hp_item[0] }}_hospital_{{ hp_item[1] }}_{{ hp_item[2] }}" style="border: none; border: 0; background-color: transparent; width:100%; color:white">
+                                        <li> {{ hp_item[2] + ", " + hp_item[3] + ", " +  hp_item[4] }} </li>
+                                        </button>
+                                    {% endfor %}
+                                </ul>
+                                <input type="hidden" id="selectedHP" name="selectedHP" value="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <!-- Page heading-->
+                        <h1 class="mb-5"><img src="../static/HP_icon_back.png" width="70" height="70"><b> Pharmacy</b></h1>
+                        <!-- to get an API token!-->
+                        <div style="overflow-y: scroll; height:500px;">
+                            <form id="pmTarget" action="/target" method="post">
+                                <ul class="pmList">
+                                    {% for idx, pm_item in enumerate(pm) %}
+                                        <button type="submit" id="dataVal" name="dataVal" value="{{ pm_item[0] }}_pharmacy_{{ pm_item[1] }}_{{ pm_item[2] }}" style="border: none; border: 0; background-color: transparent; width:100%; color:white">
+                                        <li> {{ pm_item[1] + ", " + pm_item[2] + ", " + pm_item[3] }} </li>
+                                        </button>
+                                    {% endfor %}
+                                </ul>
+                                <input type="hidden" id="selectedPM" name="selectedPM" value="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- Kakao Maps API JS-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=key를 입력하시오."></script>
+    <!-- Custom JavaScript for map rendering-->
+    <script src="js/map.js"></script>
+
+    <script>
+        function searchSubmit() {
+            var searchTerm = document.getElementById('hosptalpharmacy').value;
+            window.location.href = 'submit.html?searchTerm=' + encodeURIComponent(searchTerm);
+        }
+    </script>
+</body>
+</html>
